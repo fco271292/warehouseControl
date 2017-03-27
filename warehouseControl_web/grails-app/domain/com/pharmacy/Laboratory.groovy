@@ -18,4 +18,6 @@ class Laboratory {
     String email
     String phone
 
+    static hasMany = [products:Product]
+
 }

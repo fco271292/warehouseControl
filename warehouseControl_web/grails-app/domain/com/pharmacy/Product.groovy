@@ -24,4 +24,11 @@ class Product {
     Date expirationDate
     String activeComponent
 
+	static mapping = {
+    	taxes cascade: "all-delete-orphan"
+    }
+
+    static belongsTo = [Warehouse, Laboratory, Provider]
+    static hasMany = [warehouses:Warehouse, taxes:Tax, providers:Provider, laboratories: Laboratory]
+
 }

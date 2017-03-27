@@ -13,6 +13,7 @@ class Customer {
     	address blank:false, nullable:false, minSize:1
     	phone blank:false, nullable:false, minSize:10
     	rfc blank:true, nullable:true
+        warehouse blank:true, nullable:true
 
     }
 
@@ -27,5 +28,7 @@ class Customer {
 	String address
 	String phone
 	String rfc
+
+    static belongsTo = [warehouse:Warehouse]
 
 }

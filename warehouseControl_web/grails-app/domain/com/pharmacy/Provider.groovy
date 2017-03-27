@@ -18,4 +18,6 @@ class Provider {
     String email
     String phone
 
+    static hasMany = [products:Product]
+
 }
