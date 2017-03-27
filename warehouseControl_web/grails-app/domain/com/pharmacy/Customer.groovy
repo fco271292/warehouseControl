@@ -9,10 +9,10 @@ class Customer {
     	secondSurname blank:true, nullable:true,minSize:0
     	birthDate blank:true, nullable:false
     	occupation blank:true, nullable:true
-    	email blank:true, nullable:false, email:true
+    	email blank:true, nullable:true, email:true
     	address blank:false, nullable:false, minSize:1
     	phone blank:false, nullable:false, minSize:10
-    	rfc blank:true, nullable:false
+    	rfc blank:true, nullable:true
 
     }
 

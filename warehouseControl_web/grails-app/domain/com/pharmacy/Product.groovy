@@ -6,10 +6,10 @@ class Product {
 
     	barcode blank:false, nullable:false, minSize:1, unique:true
     	description blank:false, nullable:false, minSize:1
-		purchasePrice blank:false, nullable:false, min:0.0
-		maximumPrice blank:false, nullable:false, min:0.0
-		salePrice blank:true, nullable:true, min:0.0
-		discount blank:true, nullable:true, min:0.0
+		purchasePrice blank:false, nullable:false, min:0F
+		maximumPrice blank:false, nullable:false, min:0F
+		salePrice blank:true, nullable:true, min:0F
+		discount blank:true, nullable:true, min:0F
 		expirationDate blank:false, nullable:false
 		activeComponent blank:true, nullable:true, minSize:1
 

@@ -6,8 +6,8 @@ class Provider {
     	
     	fullName blank:false, nullable:false, minSize:1
 		address blank:false, nullable:false, minSize:1
-		email blank:true, nullable:false, email:true
-		phone blank:false, nullable:false, minSize:10
+		email blank:true, nullable:true, email:true
+		phone blank:true, nullable:true, minSize:10
 		
     }
 

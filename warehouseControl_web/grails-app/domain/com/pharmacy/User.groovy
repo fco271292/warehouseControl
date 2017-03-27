@@ -7,12 +7,12 @@ class User {
     	name blank:false, nullable:false, minSize:1
     	lastName blank:false, nullable:false, minSize:1
     	secondSurname blank:true, nullable:true,minSize:0
-    	birthDate blank:true, nullable:false
+    	birthDate blank:true, nullable:true
     	position blank:false, nullable:false
-    	email blank:true, nullable:false, email:true
+    	email blank:true, nullable:true, email:true
     	address blank:false, nullable:false, minSize:1
     	phone blank:false, nullable:false, minSize:10
-    	rfc blank:true, nullable:false
+    	rfc blank:true, nullable:true
 
     }
 
