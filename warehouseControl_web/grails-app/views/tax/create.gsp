@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'tax.label', default: 'Tax')}" />
+        <g:set var="entityName" value="${message(code: 'tax.label', default: 'Impuesto')}" />
         <title><g:message code="default.create.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -27,7 +27,10 @@
             </g:hasErrors>
             <g:form action="save">
                 <fieldset class="form">
-                    <f:all bean="tax"/>
+                    <f:with bean="tax">
+                        <f:field property="description" label="Descripción"/>
+                        <f:field property="amount" label="Cantidad"/>
+                    </f:with>
                 </fieldset>
                 <fieldset class="buttons">
                     <g:submitButton name="create" class="save" value="${message(code: 'default.button.create.label', default: 'Create')}" />
