@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'tax.label', default: 'Tax')}" />
+        <g:set var="entityName" value="${message(code: 'tax.label', default: 'Impuesto')}" />
         <title><g:message code="default.list.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -18,7 +18,23 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${taxList}" />
+            
+            <table >
+                <thead>
+                    <tr>
+                        <g:sortableColumn property="description" title="Descripción" />
+                        <g:sortableColumn property="amount" title="Cantidad" />
+                    </tr>
+                </thead>
+                <tbody>
+                    <g:each in="${taxList}" var="taxInstance">
+                        <tr>
+                            <td><g:link action="show" id="${taxInstance.id}">${taxInstance.description}</g:link></td>
+                            <td>${taxInstance.amount}</td>
+                        </tr>
+                    </g:each>
+                </tbody>
+            </table>
 
             <div class="pagination">
                 <g:paginate total="${taxCount ?: 0}" />
