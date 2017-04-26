@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta name="layout" content="main" />
-        <g:set var="entityName" value="${message(code: 'tax.label', default: 'Tax')}" />
+        <g:set var="entityName" value="${message(code: 'tax.label', default: 'Impuesto')}" />
         <title><g:message code="default.show.label" args="[entityName]" /></title>
     </head>
     <body>
@@ -19,7 +19,35 @@
             <g:if test="${flash.message}">
             <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:display bean="tax" />
+            
+            <div class="container">
+                <f:with bean="tax">
+                    <div class="row">
+                        <div class="col-12 col-lg-auto">
+                            <div class="panel panel-primary">
+                                <div class="panel-heading">
+                                    <span>
+                                        <f:display property="description"/>
+                                    </span>
+                                </div>
+                                <div class="panel-body">
+                                    <p>
+                                        <span class="label label-default">Cantidad: </span>
+                                        <div class="input-group">
+                                            <span class="input-group-addon">$</span>
+                                            <input type="text" class="form-control" disabled name="amount" value=<f:display property="amount"/>
+                                            />
+                                        </div>
+                                        
+                                    </p>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </f:with>                    
+            </div>
+            
             <g:form resource="${this.tax}" method="DELETE">
                 <fieldset class="buttons">
                     <g:link class="edit" action="edit" resource="${this.tax}"><g:message code="default.button.edit.label" default="Edit" /></g:link>
