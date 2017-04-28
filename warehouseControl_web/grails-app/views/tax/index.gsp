@@ -18,8 +18,19 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            
-            <table >
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="input-group">
+                            <input type="text" name="searchTax" id="searchTax" placeholder="Impuesto" class="form-control">
+                            <span class="input-group-btn">
+                                <button id="btnsearchTax" class="btn btn-secondary" onclick="filterItems('tableTax','searchTax')">Buscar</button>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <table id="tableTax">
                 <thead>
                     <tr>
                         <g:sortableColumn property="description" title="Descripción" />
@@ -40,5 +51,6 @@
                 <g:paginate total="${taxCount ?: 0}" />
             </div>
         </div>
+        <asset:javascript src="searchTable.js"/>
     </body>
 </html>
