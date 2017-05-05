@@ -20,13 +20,11 @@
             </g:if>
             <div class="container">
                 <div class="row">
-                    <div class="col-lg-6">
+                    <div class="col-lg-12">
                         <div class="input-group">
-                            <input type="text" name="searchTax" id="searchTax" placeholder="Impuesto" class="form-control">
-                            <span class="input-group-btn">
-                                <button id="btnsearchTax" class="btn btn-secondary" onclick="filterItems('tableTax','searchTax')">Buscar</button>
-                            </span>
-                        </div>
+                            <span class="input-group-addon">Buscar</span>
+                            <input type="text" name="searchTax" id="searchTax" placeholder="Impuesto" class="form-control" onkeyup="filterItems('tableTax','searchTax')" >
+                        </div>        
                     </div>
                 </div>
             </div>
