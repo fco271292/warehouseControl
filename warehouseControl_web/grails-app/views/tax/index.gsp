@@ -23,7 +23,10 @@
                     <div class="col-lg-12">
                         <div class="input-group">
                             <span class="input-group-addon">Buscar</span>
-                            <input type="text" name="searchTax" id="searchTax" placeholder="Impuesto" class="form-control" onkeyup="filterItems('tableTax','searchTax')" >
+                            <input type="text" name="searchTax" id="searchTax" placeholder="Impuesto" class="form-control" " >
+                            <!--
+                                onkeyup="filterItems('tableTax','searchTax')
+                            -->
                         </div>        
                     </div>
                 </div>
@@ -44,11 +47,24 @@
                     </g:each>
                 </tbody>
             </table>
-
+            <!--
             <div class="pagination">
                 <g:paginate total="${taxCount ?: 0}" />
             </div>
+            -->
+            
         </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!--
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
+        -->
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
+        
+        <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
+
+    
         <asset:javascript src="searchTable.js"/>
+        <asset:javascript src="dataTable.js"/>
+        
     </body>
 </html>
