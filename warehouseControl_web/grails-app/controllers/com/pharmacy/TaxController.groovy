@@ -10,7 +10,7 @@ class TaxController {
 
     def index(Integer max) {
         params.max = Math.min(max ?: 10, 100)
-        respond Tax.list(params), model:[taxCount: Tax.count()]
+        respond Tax.listOrderByDescription(), model:[taxCount: Tax.count()]
     }
 
     def show(Tax tax) {
