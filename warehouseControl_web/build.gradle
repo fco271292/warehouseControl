@@ -76,6 +76,7 @@ bower {
     }
 
     'datatable' ('1.10.15') {
-        source '/media/js/**'
+        source '/media/js/jquery.dataTables.min.js'
+        source '/media/js/dataTables.bootstrap.min.js'
     }
 }
