@@ -125,4 +125,5 @@ bower_components
 .bower-registry
 .bower-tmp
 
-node_modules
+node_modules/**
+grails-app/assets/javascripts/bower/**
