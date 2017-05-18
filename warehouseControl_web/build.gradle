@@ -2,12 +2,19 @@ buildscript {
     repositories {
         mavenLocal()
         maven { url "https://repo.grails.org/grails/core" }
+        maven {
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
         classpath "org.grails:grails-gradle-plugin:$grailsVersion"
         classpath "com.bertramlabs.plugins:asset-pipeline-gradle:2.11.6"
         classpath "org.grails.plugins:hibernate5:${gormVersion-".RELEASE"}"
     }
+}
+
+plugins {
+  id "com.craigburke.bower-installer" version "2.5.1"
 }
 
 version "0.1"
@@ -58,4 +65,17 @@ bootRun {
 assets {
     minifyJs = true
     minifyCss = true
+}
+
+bower {
+
+    installBase = "grails-app/assets/javascripts/bower"
+    
+    'jquery' ('2.2.4') {
+        source '/dist/jquery.min.js' 
+    }
+
+    'datatable' ('1.10.15') {
+        source '/media/js/**'
+    }
 }
