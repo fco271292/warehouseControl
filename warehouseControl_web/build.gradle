@@ -75,8 +75,7 @@ bower {
         source '/dist/jquery.min.js' 
     }
 
-    'datatable' ('1.10.15') {
-        source '/media/js/jquery.dataTables.min.js'
-        source '/media/js/dataTables.bootstrap.min.js'
+    'datatables.net-bs' ('1.10.15') {
+        source '**'
     }
 }
