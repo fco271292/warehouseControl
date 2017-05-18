@@ -54,15 +54,12 @@
             -->
             
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <!--
-        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.15/css/jquery.dataTables.min.css"/>
-        -->
-        <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/jquery.dataTables.min.js"></script>
-        
-        <script type="text/javascript" src="https://cdn.datatables.net/1.10.15/js/dataTables.bootstrap.min.js"></script>
 
-    
+        <asset:javascript src="/bower/jquery/jquery.min.js" />
+        
+        <asset:javascript src="/bower/datatables.net/jquery.dataTables.js" />
+        <asset:javascript src="/bower/datatables.net-bs/js/dataTables.bootstrap.min.js" />
+        
         <asset:javascript src="searchTable.js"/>
         <asset:javascript src="dataTable.js"/>
         
