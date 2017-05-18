@@ -118,3 +118,11 @@ gradle-app.setting
 
 # # Work around https://youtrack.jetbrains.com/issue/IDEA-116898
 # gradle/wrapper/gradle-wrapper.properties
+
+### Bower ###
+bower_components
+.bower-cache
+.bower-registry
+.bower-tmp
+
+node_modules
