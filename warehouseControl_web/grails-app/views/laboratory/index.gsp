@@ -18,11 +18,14 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${laboratoryList}" />
 
-            <div class="pagination">
-                <g:paginate total="${laboratoryCount ?: 0}" />
-            </div>
+            <g:render template="/template/templateTable" 
+                model="['objectList':laboratoryList,
+                        'headers':['Laboratorio','Dirección','Correo','Teléfono'],
+                        'properties':['fullName','address','email','phone'],
+                        'placeholder':'Laboratorio']"
+            />
+            
         </div>
     </body>
 </html>

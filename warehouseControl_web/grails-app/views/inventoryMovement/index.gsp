@@ -18,11 +18,13 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <f:table collection="${inventoryMovementList}" />
-
-            <div class="pagination">
-                <g:paginate total="${inventoryMovementCount ?: 0}" />
-            </div>
+            
+            <g:render template="/template/templateTable" 
+                model="['objectList':inventoryMovementList,
+                        'headers':['Tipo de movimiento'],
+                        'properties':['movementType'],
+                        'placeholder':'Tipo de movimiento']"
+            />
         </div>
     </body>
 </html>
