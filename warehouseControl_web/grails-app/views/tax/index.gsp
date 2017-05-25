@@ -18,50 +18,15 @@
             <g:if test="${flash.message}">
                 <div class="message" role="status">${flash.message}</div>
             </g:if>
-            <div class="container">
-                <div class="row">
-                    <div class="col-lg-12">
-                        <div class="input-group">
-                            <span class="input-group-addon">Buscar</span>
-                            <input type="text" name="searchTax" id="searchTax" placeholder="Impuesto" class="form-control" " >
-                            <!--
-                                onkeyup="filterItems('tableTax','searchTax')
-                            -->
-                        </div>        
-                    </div>
-                </div>
-            </div>
-            <table id="tableTax">
-                <thead>
-                    <tr>
-                        <g:sortableColumn property="description" title="Descripción" />
-                        <g:sortableColumn property="amount" title="Cantidad" />
-                    </tr>
-                </thead>
-                <tbody>
-                    <g:each in="${taxList}" var="taxInstance">
-                        <tr>
-                            <td><g:link action="show" id="${taxInstance.id}">${taxInstance.description}</g:link></td>
-                            <td>${taxInstance.amount}</td>
-                        </tr>
-                    </g:each>
-                </tbody>
-            </table>
-            <!--
-            <div class="pagination">
-                <g:paginate total="${taxCount ?: 0}" />
-            </div>
-            -->
+            
+            
+            <g:render template="/template/templateTable" 
+                model="['objectList':taxList,
+                        'headers':['Descripción','Cantidad'],
+                        'properties':['description','amount'],
+                        'placeholder':'Impuesto']"
+            />
             
         </div>
-
-        <asset:javascript src="/bower/jquery/jquery.min.js" />
-        
-        <asset:javascript src="/bower/datatables.net/jquery.dataTables.js" />
-        <asset:javascript src="/bower/datatables.net-bs/js/dataTables.bootstrap.min.js" />
-        
-        <asset:javascript src="searchTable.js"/>
-        <asset:javascript src="dataTable.js"/>
-        
     </body>
 </html>
