@@ -41,7 +41,6 @@
 
 		</div>
 
-		<asset:javascript src="/bower/jquery/jquery.min.js" />
 		<asset:javascript src="/bower/datatables.net/jquery.dataTables.js" />
 		<asset:javascript src="/bower/datatables.net-bs/js/dataTables.bootstrap.min.js" />
 		<asset:javascript src="dataTable.js"/>
