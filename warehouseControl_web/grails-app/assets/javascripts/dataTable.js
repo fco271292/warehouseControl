@@ -1,6 +1,6 @@
 $.noConflict()
 jQuery(document).ready(function($) {
-    var table = $('#tableTax').DataTable({
+    var table = $('#table').DataTable({
         
         "paging": true,
         "lengthMenu": [[10, 30, 50, -1], [10, 30, 50, "Todos"]],
@@ -34,14 +34,8 @@ jQuery(document).ready(function($) {
     });
 
     //Permite buscar desde una entrada alterna
-    $('#searchTax').on( 'keyup', function () {
+    $('#searchText').on( 'keyup', function () {
         table.search(this.value).draw();
     } );
     
-    manageSearchTable("tableTax","searchTax");
 } );
-
-function manageSearchTable(tableID, inputID,$) {
-    $('#searchTax').hide()
-    console.log(`#${tableID} #${inputID}`)
-}
