@@ -12,21 +12,22 @@ class ManagerMicrosoftOfficeFormats {
 	XSSFWorkbook openExcel(String pathFile){
 		
 		File excel = new File(pathFile)
-		println "Archivo: ${excel.path}"	
 		workbook = new XSSFWorkbook(excel)
-		def list = new ManagerMicrosoftOfficeFormats().getAllSheetNames(workbook)
-		println "Lista de nombre de hojas: ${list}"
 		new ManagerMicrosoftOfficeFormats().readSheets(workbook)
+		workbook
+
 	}	
 
 	def readSheets(XSSFWorkbook workbook){
 		
+
 		String sheetName = ""
 		workbook.eachWithIndex{sheet,index->
 			sheetName = sheet.getSheetName()
 			sheet.each{row->
 				row.each{cell->
-					print cell
+					if(row.size() > 1 && cell.getCellStyle().getFillBackgroundColor() != 0)
+						print cell	
 				}
 				println ""
 			}
