@@ -22,12 +22,12 @@ class ManagerMicrosoftOfficeFormats {
 		
 
 		String sheetName = ""
-		workbook.eachWithIndex{sheet,index->
+		workbook.eachWithIndex{sheet,indexWorbook->
 			sheetName = sheet.getSheetName()
-			sheet.each{row->
-				row.each{cell->
+			sheet.eachWithIndex{row,indexRow->
+				row.eachWithIndex{cell,indexCell->
 					if(row.size() > 1 && cell.getCellStyle().getFillBackgroundColor() != 0)
-						print cell	
+						print "${cell} ${row.size()} ${indexRow}"
 				}
 				println ""
 			}
